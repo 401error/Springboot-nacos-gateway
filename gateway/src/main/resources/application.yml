@@ -1,0 +1,27 @@
+
+
+spring:
+  application:
+    name: book-read-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos_ip:8.131.240.143}
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: nacos-account
+
+          uri: lb://book-read-account-privider
+
+          predicates:
+            - Method=GET,POST
+        - id: nacos-bookcenter
+          uri: lb://book-center-privider
+          predicates:
+            - Method=GET,POST
+server:
+  port: 9000

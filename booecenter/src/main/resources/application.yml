@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: ${username:root}
+    password: $(password:123456}
+    url: jdbc:mysql://${mysql_host:8.131.240.143}:${mysql_port:3306}/${data_souce:readbook_content}?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: book-center-privider
+  cloud:
+    nacos:
+      discovery:
+        server-addr:  ${nacos_ip:8.131.240.143}
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

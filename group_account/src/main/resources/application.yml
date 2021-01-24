@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    username: ${username:root}
+    password: $(password:123456}
+    url: jdbc:mysql://${mysql_host:8.131.240.143}:${mysql_port:3306}/${data_souce:readbook_account}?serverTimezone=UTC                                                                       ?useUnicode=true&characterEcoding=utf-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  application:
+    name:  book-read-account-privider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos_ip:8.131.240.143}
+
+
+
+
+mybatis:
+  type-aliases-package: com.read_account.demo.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+localpath: 10.20.12.235
+
+userimage_path: D:/Book/image/
+server:
+  port: 9001
+
+
